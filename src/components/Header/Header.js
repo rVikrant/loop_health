@@ -18,15 +18,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     title: {
         flexGrow: 1,
         display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        },
+        // [theme.breakpoints.up('sm')]: {
+        //     display: 'block',
+        // },
     },
     search: {
         position: 'relative',
@@ -36,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
         margin: "2em 2em 2em 6em",
         border: ".1em solid #f5f5f6",
         width: '33% !important',
-        [theme.breakpoints.up('sm')]: {
-            width: 'auto',
-        },
+        // [theme.breakpoints.up('sm')]: {
+        //     width: 'auto',
+        // },
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
@@ -56,13 +53,47 @@ const useStyles = makeStyles((theme) => ({
     },
     inputInput: {
         width: '100% !important',
-        [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-                width: '20ch',
-            },
-        },
+        // [theme.breakpoints.up('sm')]: {
+        //     width: '12ch',
+        //     '&:focus': {
+        //         width: '20ch',
+        //     },
+        // },
     },
+    headingContainer: {
+        marginLeft: "3.5%",
+        float: "left",
+        fontWeight: "500",
+        fontSize: ".9rem",
+        color: "black",
+        width: "38%"
+    },
+    heading: {
+        float: "left",
+        textTransform: "uppercase",
+        padding: "0 .5rem"
+    },
+    profileContainer: {
+        height: "60px",
+        margin: "0 20px 0 15px",
+        float: "left"
+    },
+    profileIcon: {
+        background: "url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png)",
+        backgroundSize: "1404px 105px",
+        width: "24px",
+        height: "24px",
+        backgroundPosition: "-298px -56px",
+        margin: "10px 0 0",
+        display: "block"
+    },
+    profileTitle: {
+        color: "#000",
+        fontSize: "12px",
+        fontWeight: "500",
+        display: "inline-block",
+        lineHeight: "6px"
+    }
 }));
 
 export default function Header() {
@@ -82,61 +113,29 @@ export default function Header() {
                             <Avatar src={Logo} />
                         </Link>
                     </Typography>
-                    <Box style={{
-                        marginLeft: "3.5%",
-                        float: "left",
-                        fontWeight: "500",
-                        fontSize: ".9rem",
-                        color: "black",
-                        width: "38%"
-                    }}>
-                        <div style={{
-                            float: "left",
-                            textTransform: "uppercase",
-                        }}>
-                            <div style={{
-                                padding: "0 .5rem"
-                            }} >
+                    <Box className={classes.headingContainer} >
+                        <div className={classes.heading}>
+                            <div>
                                 Men
                             </div>
                         </div>
-                        <div style={{
-                            float: "left",
-                            textTransform: "uppercase"
-                        }}>
-                            <div style={{
-                                padding: "0 .5rem"
-                            }} >
+                        <div className={classes.heading}>
+                            <div>
                                 Women
                             </div>
                         </div>
-                        <div style={{
-                            float: "left",
-                            textTransform: "uppercase"
-                        }}>
-                            <div style={{
-                                padding: "0 .5rem"
-                            }} >
+                        <div className={classes.heading}>
+                            <div>
                                 Kids
                             </div>
                         </div>
-                        <div style={{
-                            float: "left",
-                            textTransform: "uppercase"
-                        }}>
-                            <div style={{
-                                padding: "0 .5rem"
-                            }} >
+                        <div className={classes.heading}>
+                            <div>
                                 Home & Living
                             </div>
                         </div>
-                        <div style={{
-                            float: "left",
-                            textTransform: "uppercase"
-                        }}>
-                            <div style={{
-                                padding: "0 .5rem"
-                            }} >
+                        <div className={classes.heading} >
+                            <div>
                                 Beauty
                             </div>
                         </div>
@@ -154,100 +153,33 @@ export default function Header() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div style={{
-                        float: "right"
-                    }}>
+                    <div style={{ float: "right" }}>
                         <div>
-                            <div style = {{
-                                height: "60px",
-                                margin: "0 20px 0 15px",
-                                float: "left"
-                            }}>
-                                <span style={{
-                                    background: "url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png)",
-                                    backgroundSize: "1404px 105px",
-                                    width: "24px",
-                                    height: "24px",
-                                    backgroundPosition: "-298px -56px",
-                                    margin: "10px 0 0",
-                                    // position: "absolute",
-                                    // bottom: "13px",
-                                    // left: "5px",
-                                    display: "block"
-                                }}></span>
-                                <span style={{
-                                    color: "#000",
-                                    // position: "absolute",
-                                    // bottom: "4px",
-                                    // left: "1px",
-                                    fontSize: "12px",
-                                    fontWeight: "500",
-                                    display: "inline-block",
-                                    // paddingTop: "10px",
-                                    lineHeight: "6px"
-                                }}>
+                            <div className={classes.profileContainer}>
+                                <span className={classes.profileIcon} ></span>
+                                <span className={classes.profileTitle}>
                                     Profile
                                 </span>
                             </div>
-                            <div style = {{
-                                float: "left",
-                                height: "60px",
-                                margin: "0 20px 0 15px"
-                            }}>
-                                <span style={{
-                                    background: "url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png)",
-                                    backgroundSize: "1404px 105px",
+                            <div className={classes.profileContainer}>
+                                <span className={classes.profileIcon} style={{
                                     width: "17px",
                                     height: "24px",
                                     backgroundPosition: "-315px -187px",
-                                    margin: "10px 0 0 12px",
-                                    // position: "absolute",
-                                    // bottom: "13px",
-                                    // left: "5px",
-                                    display: "block"
+                                    margin: "10px 0 0 12px"
                                 }}></span>
-                                <span style={{
-                                    color: "#000",
-                                    // position: "absolute",
-                                    // bottom: "4px",
-                                    // left: "1px",
-                                    fontSize: "12px",
-                                    fontWeight: "500",
-                                    display: "inline-block",
-                                    // paddingTop: "10px",
-                                    lineHeight: "6px"
-                                }}>
+                                <span className={classes.profileTitle} >
                                     Wishlist
                                 </span>
                             </div>
-                            <div style = {{
-                                float: "right",
-                                height: "60px",
-                                margin: "0 20px 0 15px"
-                            }}>
-                                <span style={{
-                                    background: "url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png)",
-                                    backgroundSize: "1404px 105px",
+                            <div className={classes.profileContainer} style={{ float: "right" }}>
+                                <span className={classes.profileIcon} style={{
                                     width: "22px",
                                     height: "22px",
                                     backgroundPosition: "-341px -56px",
                                     margin: "10px 0 0",
-                                    // position: "absolute",
-                                    // bottom: "13px",
-                                    // left: "5px",
-                                    display: "block"
                                 }}></span>
-                                <span style={{
-                                    color: "#000",
-                                    // position: "absolute",
-                                    // bottom: "4px",
-                                    // left: "1px",
-                                    fontSize: "12px",
-                                    fontWeight: "500",
-                                    display: "inline-block",
-                                    // paddingTop: "10px",
-                                    lineHeight: "6px"
-                                }}>
+                                <span className={classes.profileTitle}>
                                     Bag
                                 </span>
                             </div>
